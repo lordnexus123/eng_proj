@@ -1,0 +1,4 @@
+node app.js
+
+w przypadku braku aktalizacji "na żywo": nodemon app.js
+
