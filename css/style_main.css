@@ -1,0 +1,115 @@
+/*
+:active
+{
+	#color: #EEE;
+	#color-main-dark: #de5f89;
+	#color-main-light #515f89;
+	#color-footer-navbar-
+}
+
+*/
+
+:root {
+  --bg-color: #eeeeee; 
+  --main-dark: #839ec7;
+  --main-light: #a9d5ff;
+  --main-color: rgba(203,214,247,0.6);
+
+}
+
+*
+{
+	box-sizing: content-box;
+}
+
+body
+{
+	background-color: var(--bg-color);	
+	z-index: 0;
+	background-image: url(../img/lekarzodreki.jpg);
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.navbar
+{
+	background-color: #515f89;
+	padding: 1hr;
+	height: 5vh;
+	-webkit-radius-opacity: 1px, 1px, 2px, 2px;
+}
+
+.navbar -> .nav-item: active
+{
+	background-color: #283f73;
+}
+
+.navbar -> .nav-link: hover
+{
+	background-color: #de5f89;
+}
+
+
+.container
+{
+	z-index: 1;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	height: auto;
+	background-color: var(--main-color);
+}
+
+hr
+{
+	background-color: #de5f89;
+}
+
+row
+{
+	background-color: background-color: #283f73;
+}
+
+row: active
+{
+	background-color: background-color: #283f73;
+}
+
+.footer
+{
+	height: 5vh;
+}
+
+
+#log2, #log3, #reg2
+{
+	display: none;
+}
+
+
+
+
+.list-group-item 
+{
+	border-style: none;
+}
+
+.list-group-item-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+  border-style: none;
+}
+.list-group-item-check:hover + .list-group-item {
+  background-color: var(--main-dark);
+}
+.list-group-item-check:checked + .list-group-item {
+  color: #fff;
+  background-color: var(--main-color);
+}
+.list-group-item-check[disabled] + .list-group-item,
+.list-group-item-check:disabled + .list-group-item {
+  pointer-events: none;
+  filter: none;
+}

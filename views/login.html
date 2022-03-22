@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    	<title>Lekarz od ręki</title>
+		
+    	<link rel="stylesheet" type="text/css" href="../css/style_main.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+	
+	
+
+
+
+<script type="text/javascript">
+    function ShowHideDiv() {
+        var chkYes = document.getElementById("chkYes");
+        var dvPassport = document.getElementById("dvPassport");
+        dvPassport.style.display = chkYes.checked ? "block" : "none";
+    }
+</script>
+<span>Do you have Passport?</span>
+<label for="chkYes">
+    <input type="radio" id="chkYes" name="chkPassPort" onclick="ShowHideDiv()" />
+    Yes
+</label>
+<label for="chkNo">
+    <input type="radio" id="chkNo" name="chkPassPort" onclick="ShowHideDiv()" />
+    No
+</label>
+<hr />
+<div id="dvPassport" style="display: none">
+    Passport Number:
+    <input type="text" id="txtPassportNumber" />
+</div>
+
+
+
+
+	<nav class=" navbar navbar-expand-lg navbar-dark bg-darekrounded-bottom border-dark fixed-top navbar-toggler-right">
+    	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        	
+			<div class="navbar-nav me-auto">
+                <a href="index.html" class="nav-item nav-link">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+					<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+					</svg>
+				</a>
+				
+            </div>
+			
+			<div class="navbar-nav ms-auto">
+        		<a class="nav-item nav-link" href="login.html">Login</a>
+        		<a class="nav-item nav-link" href="register.html">Register</a>
+        	</div>
+			
+			
+    	</div>
+	</nav>        
+
+
+
+    <div class="container ">
+        <div class="row block-center text-center">
+		<div class="col-sm-4">
+			<input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" onclick="logChange()" value="" checked>
+			<label class="list-group-item" for="listGroupCheckableRadios1">
+				<h1>PACJENT</h1>
+			</label>
+		</div>
+			
+		<div class="col-sm-4 ">
+			<input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" onclick="logChange()" value="">
+			<label class="list-group-item " for="listGroupCheckableRadios2">
+				<h1>PLACÓWKA</h1>
+			</label>
+		</div>
+			
+		<div class="col-sm-4">
+			<input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" onclick="logChange()" value="">
+			<label class="list-group-item " for="listGroupCheckableRadios3">
+				<h1>LEKARZ</h1>
+			</label>
+		</div>
+        </div>
+	
+	<form action="/auth" method="post">
+        <div class="row block-center text-center" id="log1">
+		<div class="login">
+			<h1>Zaloguj się jako pacjent:</h1>
+			<div class="">
+				<label for="nazwa użytkownika"> </label>
+				<input type="text" name="pacj_username" placeholder="Nazwa użytkownika" id="pacj_username" required>
+			</div>
+			<div class="">
+				<label for="hasło"></label>
+				<input type="password" name="pacj_password" placeholder="Hasło" id="pacj_password" required>
+			</div>	
+		</div> 
+	</div>
+	<div class="row block-center text-center" id="log2">
+		<div class="login">
+			<h1>Zaloguj się jako placówka:</h1>
+			<div class="">
+				<label for="nazwa użytkownika"> </label>
+				<input type="text" name="plac_username" placeholder="Nazwa użytkownika" id="plac_username" required>
+			</div>
+			<div class="">
+				<label for="hasło"></label>
+				<input type="password" name="plac_password" placeholder="Hasło" id="plac_password" required>
+			</div>	
+		</div> 
+	</div>
+	<div class="row block-center text-center" id="log3">
+		<div class="login">
+			<h1>Zaloguj się jako lekarz:</h1>
+			<div class="">
+				<label for="nazwa użytkownika"> </label>
+				<input type="text" name="lek_username" placeholder="Nazwa użytkownika" id="lek_username" required>
+			</div>
+			<div class="">
+				<label for="hasło"></label>
+				<input type="password" name="lek_password" placeholder="Hasło" id="lek_password" required>
+			</div>	
+		</div> 
+	</div>
+
+
+	<div class="row-sm-4 block-center text-center">
+		<button class="w-20 btn btn-lg btn-primary justify-content-between align-items-center " type="submit">Sign in</button>
+	</div>
+	</form>
+    </div>
+
+
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> 
+	<script type="text/javascript" src="../scripts/main.js"></script>
+
+	<footer class=" border-light d-flex flex-wrap justify-content-between align-items-center border-top bg-dark rounded-top fixed-bottom">
+		<p class="col-md-4 mb-0 text-muted">&copy; 2021 Lekarz od ręki</p>
+
+		<ul class="nav col-md-4 justify-content-end ">
+			<li class="nav-item"></li>
+			<li class="nav-item"><a href="about" class="nav-link px-2 text-muted">About</a></li>
+		</ul>
+	</footer>
+
+    </body>
+</html>
