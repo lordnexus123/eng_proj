@@ -1,0 +1,140 @@
+Strona internetowa do umawiania telekonferencji z lekarzami. Przechowuje dane pacjentów, lekarzy i placówek.
+Strona składa się z 3 głównych widoków, w zależności, jako kto się zalogowałeś(pacjent, placówka, lekarz) oraz pokoju do przeprowadzania wideorozmowy.
+Jako pacjent bedziesz mógł umawiać się na wizyty, dołączyć do pokoju, gdzie będzie czekać na lekarza oraz zobaczyć historię konsultacji.
+jako placówka będziesz mógł dodawać nowych lekarzy do placówki, ustalać ich grafiki oraz przejrzeć i historię odbytych konsultacji.
+Jako lekarz będziesz mógł zobaczyć obecnie zaplanowane oraz odbyte konsultajcę.
+
+
+zapytania:
+*account
+SELECT pacjent_dane.imię, pacjent_dane.nazwisko, pacjent_dane.adres, pacjent_dane.telefon, pacjent.email FROM `pacjent_dane` INNER JOIN pacjent ON pacjent_dane.id_pacjent = pacjent.id_pacjent WHERE pacjent_dane.id_pacjent = 1;
+
+*currp
+SELECT lekarz_dane.specjalizacja, `lekarz_dane`.`imie`, `lekarz_dane`.`nazwisko`, terminarz.data, terminarz.godzina FROM `terminarz` INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz WHERE lekarz_dane.specjalizacja = '*' OR lekarz_dane.nazwisko = '*' AND terminarz.id_pacjent IS NULL AND terminarz.data >= CURDATE();
+INSERT INTO `wizyta_dane`(`id_wizyta`, `id_pacjent`, `id_termin`, `link_tele`, `realizacja`) VALUES ('1','1','7','link','0');
+UPDATE `terminarz` INNER JOIN `wizyta_dane` ON `terminarz`.`id_termin` = `wizyta_dane`.`id_termin` SET `terminarz`.`id_pacjent`='1' WHERE `terminarz`.`id_termin` = "7";
+
+*termp
+SELECT lekarz_dane.specjalizacja, `lekarz_dane`.`imie`, `lekarz_dane`.`nazwisko`, terminarz.data, terminarz.godzina FROM `terminarz`  INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz WHERE lekarz_dane.specjalizacja = '*' OR lekarz_dane.nazwisko = '*' AND terminarz.id_pacjent IS NULL;
+
+
+*currl
+SELECT terminarz.data, terminarz.godzina, pacjent_dane.imię, pacjent_dane.nazwisko, pacjent_dane.PESEL, wizyta_dane.link_tele FROM `wizyta_dane` INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent INNER JOIN terminarz ON wizyta_dane.id_termin = terminarz.id_termin WHERE `terminarz`.`id_lekarz` = '1' AND terminarz.id_pacjent IS NOT NULL;
+UPDATE `wizyta_dane` SET `realizacja`='1' WHERE id_termin = "[ten termin]"; 
+
+*histl
+SELECT pacjent_dane.imię, pacjent_dane.nazwisko, terminarz.data, terminarz.godzina, wizyta_dane.realizacja  FROM `wizyta_dane` INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent INNER JOIN terminarz ON wizyta_dane.id_termin = terminarz.id_termin WHERE `terminarz`.`id_lekarz` = '1' AND terminarz.id_pacjent IS NOT NULL;
+
+*accountpl
+SELECT placowka_dane.nazwa, placowka_dane.adres, placowka_dane.telefon, placowka.email FROM `placowka_dane` INNER JOIN placowka ON placowka_dane.id_placowka=placowka.id_placowka;
+
+*histpl
+SELECT CONCAT_WS(' ',lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz, lekarz_dane.specjalizacja, CONCAT_WS(' ', pacjent_dane.imię, pacjent_dane.nazwisko) AS pacjent, terminarz.data, terminarz.godzina,wizyta_dane.realizacja FROM `wizyta_dane` INNER JOIN terminarz ON wizyta_dane.id_termin = wizyta_dane.id_termin INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent WHERE terminarz.id_pacjent IS NOT NULL;
+
+*drpl
+SELECT lekarz_dane.specjalizacja, CONCAT_WS(' ', lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz, lekarz_dane.nr_pwz, lekarz.login, lekarz.haslo FROM `lekarz_dane` INNER JOIN lekarz On lekarz_dane.id_lekarz=lekarz.id_lekarz;
+SELECT CONCAT_WS(' ', lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz FROM `lekarz_dane` INNER JOIN lekarz_gp ON lekarz_gp.id_lekarz=lekarz_dane.id_lekarz WHERE id_placowka=[zalogowana-placowka];
+
+*currpl
+SELECT CONCAT_WS(' ', lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz FROM `lekarz_dane` INNER JOIN lekarz_gp ON lekarz_gp.id_lekarz=lekarz_dane.id_lekarz WHERE id_placowka=[zalogowana-placowka];
+SELECT CONCAT_WS(' ', pacjent_dane.imię, pacjent_dane.nazwisko) AS pacjent, terminarz.data, terminarz.godzina FROM `wizyta_dane` INNER JOIN terminarz ON wizyta_dane.id_termin = wizyta_dane.id_termin INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent WHERE terminarz.data >= CURDATE() AND lekarz_dane= [id-wybranego-lekarza];
+
+
+
+Start:
+
+index.ejs 
+*wyszukiwarka (po kliknięciu w "termin", wyskakuje okno z informacją o konieczności rejestracji)
+-po miejscowości(lokalizacja placówki)
+-po specjalizacji (lekarza)
+
+
+login.ejs (do zrobienia):
+*3 formularze logowania
+-dla pacjenta (przenosi do pacj.ejs)
+-dla placówki (przenosi do plac.ejs)
+-dla lekarza (przenosi do drc.ejs)
+
+rejestracja.ejs (do zrobienia):
+*pole wyboru, kto się rejestruje( bez lekarza, dostęp do platformy udziela placówka,[wyjaśnione niżej])
+-pacjent
+-placówka 
+*wyświetla odpowiedni formularz
+________________________________________________________________
+Pacjent:
+
+pacj.ejs - wstępnie zrobione:
+"jednorazowa" strona główna
+*wyświetla 4 przyciski, których kliknięcie przenosi do:
+-account
+-termP
+-currP
+-histP
+
+account.ejs:
+-wyświetla dane użytkownika
+- możliwość ich edycji
+
+termP..ejs  :
+*wyszukiwarka
+-po miejscowości(lokalizacja placówki)
+-po specjalizacji (lekarza)
+
+currP..ejs :
+-wyświetla obecnie umówione wizyty, tj.:
+*z jakim lekarzem
+*kiedy(data, godzina)
+*link do [room.ejs]
+
+histP.ejs  :
+-wyświetla odbyte wizyty, tj.:
+*z jakim lekarzem
+*kiedy(data, godzina)
+____________________________________________________________________
+Placówka:
+
+plac.ejs:
+"jednorazowa" strona główna
+*wyświetla 4 przyciski, których kliknięcie przenosi do:
+-accountpl
+-drpl
+-currpl
+-histpl
+
+accountpl.ejs:
+-wyświetla dane placówki
+- możliwość ich edycji
+
+drpl.ejs  :
+*formularz dodania lekarz do placówki
+*lista lekarzy przypisanych do placówki (wyświetla imię, nazwisko i specjalizację)
+
+currpl.ejs  :
+*formularz dodania terminarza dla wybranego lekarza
+
+histpl.ejs  :
+-wyświetla odbyte wizyty lekarzy dodanych do placówki, tj.:
+*jaki lekarz
+*z jakim pacjentem
+*kiedy(data, godzina)
+____________________________________________________________________
+Lekarz:
+
+drc.ejs:
+"jednorazowa" strona główna
+*wyświetla 2 przyciski, których kliknięcie przenosi do:
+-accountpl
+-drpl
+-currpl
+-histpl
+
+currl.ejs  :
+-wyświetla obecnie umówione wizyty lekarzy, tj.:
+*z jakim pacjentem
+*kiedy(data, godzina)
+*link do [room.ejs]
+
+histl.ejs  :
+-wyświetla odbyte wizyty lekarza dodanych do placówki, tj.:
+*z jakim pacjentem
+*kiedy(data, godzina)

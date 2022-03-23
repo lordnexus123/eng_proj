@@ -89,7 +89,6 @@ row: active
 
 
 
-
 .list-group-item 
 {
 	border-style: none;
@@ -112,4 +111,12 @@ row: active
 .list-group-item-check:disabled + .list-group-item {
   pointer-events: none;
   filter: none;
+}
+
+
+/* Tabele */
+
+tr, td
+{
+	border-top: 3px solid #444444;
 }
