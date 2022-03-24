@@ -55,12 +55,7 @@
             <h1>Wyszukaj konsultację</h1>
         </div>
         <hr>
-	<div class="row">
-		<p>SELECT lekarz_dane.specjalizacja, `lekarz_dane`.`imie`, `lekarz_dane`.`nazwisko`, terminarz.data, terminarz.godzina FROM `terminarz` 
-INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz
-WHERE lekarz_dane.specjalizacja = '*' OR lekarz_dane.nazwisko = '*' AND terminarz.id_pacjent IS NULL AND terminarz.data >= CURDATE();</p>
-	</div>
-	
+
 	<div class="row">
 		<div class="input-group">
 			<input type="search" class="form-control rounded" placeholder="Specjalizacja lub nazwisko" aria-label="Search" aria-describedby="search-addon" />
@@ -80,34 +75,27 @@ WHERE lekarz_dane.specjalizacja = '*' OR lekarz_dane.nazwisko = '*' AND terminar
 					<td><p>godzina</p></td>
 					<td><button>Umów</button></td>
 				</tr>
-				<tr>
-					<td><p>Imię lekarza</p></td>
-					<td><p>Nazwisko lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td>UPDATE `terminarz` INNER JOIN `wizyta_dane` ON `terminarz`.`id_termin` = `wizyta_dane`.`id_termin` SET `terminarz`.`id_pacjent`='1' WHERE `terminarz`.`id_termin` = "wybrany termin";</td>
-				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="row termin">
 		<div>
-		<h4>Specjalizacje lekarzy</h4>
+		<h4>Chirurg naczyniowy</h4>
 		</div>
 		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
 			<tbody>
 				<tr>
-					<td><p>Imię lekarza</p></td>
-					<td><p>Nazwisko lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
+					<td><p>Klemens</p></td>
+					<td><p>Otwocki</p></td>
+					<td><p>2022-04-23</p></td>
+					<td><p>09:15</p></td>
 					<td><button>Umów</button></td>
 				</tr>
 				<tr>
-					<td><p>Imię lekarza</p></td>
-					<td><p>Nazwisko lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
+					<td><p>Ignacy</p></td>
+					<td><p>Potocki</p></td>
+					<td><p>2022-05-17</p></td>
+					<td><p>17:20</p></td>
 					<td><button>Umów</button></td>
 				</tr>
 			</tbody>

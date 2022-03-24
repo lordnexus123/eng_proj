@@ -49,75 +49,37 @@
 
     <div class="container ">
         
-	<div class="row">SELECT pacjent_dane.imię, pacjent_dane.nazwisko, pacjent_dane.pesel, pacjent_dane.adres, pacjent_dane.telefon, pacjent.email FROM `pacjent_dane` INNER JOIN pacjent ON pacjent_dane.id_pacjent = pacjent.id_pacjent WHERE pacjent_dane.id_pacjent = 1;</div>
 	<div class="row block-center text-center" id="">
 		<div class="pacj_dane">
 			<h1>Dane kontaktowe:</h1>
 			<hr>
 			<div class="col ">
-				<p>Imię: </p>
-				<p>Nazwisko: </p>
-				<p>Data urodzenia: </p>
-				<p>PESEL: </p>
-				<p>Adres zamieszkania: </p>
-				<p>Adres e-mail: </p>
-				<p>telefon: </p>				
+				<p>Imię: Jan</p>
+				<p>Nazwisko: Nowak</p>
+				<p>Data urodzenia: 1995-03-17</p>
+				<p>PESEL: 98042309999</p>
+				<p>Adres zamieszkania: 11-111 Błonie ul. 4 Buki 87</p>
+				<p>Adres e-mail: jan.nowak@wp.pl</p>
+				<p>telefon: 517883049</p>				
 				<hr>
 			</div>
 		</div>
 	</div>
 	<div class="row block-center text-center">
-		<div class="accordion" id="accordionExample">
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						Zmiana hasła
-					</button>
-				</h2>
-				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-					<div class="accordion-body">
-						<div class="">
-							<label class="col" for="old_pacj_password">Stare hasło:</label>
-							<input class="col" type="password" name="old_pacj_password" placeholder="Hasło" id="old_pacj_password" required>
-						</div>
-						<div class="">
-							<label for="new_pacj_password1">Nowe hasło:</label>
-							<input type="password" name="new_pacj_password1" placeholder="powtórz hasło" id="new_pacj_password2" required>
-						</div>
-						<div class="">
-							<label for="new_pacj_password2">Powtórz nowe hasło:</label>
-							<input type="password" name="new_pacj_password2" placeholder="powtórz hasło" id="new_pacj_password2" required>
-						</div>
-						<button>zmień</button>
-					</div>
-				</div>
-			</div>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingTwo">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						Zmiana adresu zamieszkania
-					</button>
-				</h2>
-				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-					<div class="accordion-body">
-						<div class="">
-							<label for="pacj_eMail:">E-mail:</label>
-							<input type="email" name="pacj_eMail" placeholder="default@example.pl" id="pacj_eMail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-						</div>
-						<div class="">
-							<label for="pacj_adres">Adres zamieszkania:</label>
-							<input type="text" name="pacj_adres" placeholder="11-111 Błonie ul. Ulu 15" id="pacj_adres" pattern="[0-9]{2}+[-]{1}+[0-9]{3}+[a-z0-9._%+-]" size="30" required>
-						</div>
-						<div class="">
-							<label for="pacj_telefon">telefon:</label>
-							<input type="tel" name="pacj_telefon" value"123456789" id="pacj_telefon" pattern="[0-9]{9}" required>
-						</div>
-						<button>zmień</button>
-					</div>
-				</div>
-			</div>
+		<div class="col-sm-4">
+			<a href="accchpass.html" class="logc">
+				<h3>Zmiana hasła</h3>
+			</a>
 		</div>
-	</div>
+		<div class="col-sm-4">
+			
+		</div>
+		<div class="col-sm-4">
+			<a href="accchadr.html" class="logc">
+				<h3>Zmiana danych kontaktowych</h3>
+			</a>
+		</div>
+    </div>
 	
 
     </div>

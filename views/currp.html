@@ -55,31 +55,35 @@
             <h1>Obecnie zaplanowane</h1>
         </div>
         <hr>
-	<div class="row">
-		<p>SELECT lekarz_dane.specjalizacja,`lekarz_dane`.`imie`, `lekarz_dane`.`nazwisko`, terminarz.data, terminarz.godzina, wizyta_dane.link_tele FROM `wizyta_dane` 
-INNER JOIN terminarz ON wizyta_dane.id_termin = wizyta_dane.id_termin
-INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz
-WHERE `wizyta_dane`.`id_pacjent` = '1' AND terminarz.id_pacjent IS NOT NULL;</p>
-	</div>
+	
 	<div class="row termin">
 		<div>
-		<h4>Specjalizacje lekarzy</h4>
+		<h4>Internista</h4>
 		</div>
 		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
 			<tbody>
 				<tr>
-					<td><p>Imię lekarza</p></td>
-					<td><p>Nazwisko lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>link</p></td>
+					<td><p>Piotr</p></td>
+					<td><p>Jagiełło</p></td>
+					<td><p>2022-04-11</p></td>
+					<td><p>21:37</p></td>
+					<td><a href="room.html"><p>link</p></a></td>
 				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row termin">
+		<div>
+		<h4>Okulista</h4>
+		</div>
+		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
+			<tbody>
 				<tr>
-					<td><p>Imię lekarza</p></td>
-					<td><p>Nazwisko lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>link</p></td>
+					<td><p>Izabela</p></td>
+					<td><p>Cieślar</p></td>
+					<td><p>2022-04-11</p></td>
+					<td><p>20:00</p></td>
+					<td><a href="room.html"><p>link</p></a></td>
 				</tr>
 			</tbody>
 		</table>

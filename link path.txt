@@ -1,0 +1,32 @@
+index -> strona główna
+-register -> rejstracja dla pacjenta
+--registerpl -> rejestracja dla placówki
+-login -> logowanie do pacjenta/ poprawne logowanie przenosi do pacj.html
+--loginpl -> logowanie do placówki/ poprawne logowanie przenosi do plac.html
+-loginl -> logowanie do lekarza/ poprawne logowanie przenosi do drc.html
+
+pacj -> strona głowna dla pacjenta
+-account -> wyświetla dane osobowe pacjenta
+--accchpass -> zmiana hasła dla pacjenta
+--accchadr -> zmiana adresu zamieszkania, nr telefonu i e-maila
+-termp -> wyszukiwarka lekarza po specjalizacji i nazwisko i możliwość zarezerwowania wizyty
+-currp -> wyświetla obecnie umówione, nieodbyte konsultacje pacjenta/ klikniecie w 'link' przenosi do room.html
+--room -> wyświetla wideokonferencję poprzez <iframe> z zewnętrznej strony oraz czat z lekarzem
+-hist -> wyświetla wizyty pacjenta, które sie odbyły
+
+plac -> strona główna dla lekarza
+-accountpl -> wyświetla dane placówki
+--accplchpass -> zmiana hasła dla placówki
+--accplchadr -> zmiana pozostałych danych placówki(może zmienić adres, e-mail, nr telefonu)
+-drpl -> wyświetla obecnie zarejestrowanych przez placówkę lekarzy
+--drplchpass -> zmiana hasła dla lekarza
+--drpladd -> dodawanie do podmiotu medycznego lekarza
+-currpl -> dodawanie nowego grafiku dla wybranego lekarza
+--termpl -> wyświetla aktualne grafiki wybranego lekarza
+-histpl -> wyświetla wizyty lekarzy, które sie odbyły
+
+
+drc -> strona głowna dla lekarza
+-currl -> wyświetla obecnie umówione, nieodbyte konsultacje z pacjentem/ klikniecie w 'link' przenosi do room.html/ klikniecie "ptaszka" zaznacza wizytę jako odbytą.
+--room -> wyświetla wideokonferencję poprzez <iframe> z zewnętrznej strony oraz czat z lekarzem
+-histl -> wyświetla wizyty lekarza, które sie odbyły

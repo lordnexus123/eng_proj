@@ -49,70 +49,32 @@
 
     <div class="container ">
         
-		<div class="row">SELECT placowka_dane.nazwa, placowka_dane.adres, placowka_dane.telefon, placowka.email FROM `placowka_dane` INNER JOIN placowka ON placowka_dane.id_placowka=placowka.id_placowka;</div>
 		<div class="row block-center text-center" id="">
 			<div class="pacj_dane">
 				<h1>Dane kontaktowe:</h1>
 				<hr>
 				<div class="col ">
-					<p>Nazwa: </p>
-					<p>Adres: </p>
-					<p>Adres e-mail: </p>
-					<p>telefon: </p>				
+					<p>Nazwa: NZOZ Przychodnia Życie</p>
+					<p>Adres: 11-111 Błonie ul. 4 Buki 12/3</p>
+					<p>Adres e-mail: przychodnia-zycie@gmail.com</p>
+					<p>telefon: 223178844</p>				
 					<hr>
 				</div>
 			</div>
 		</div>
 		<div class="row block-center text-center">
-			<div class="accordion" id="accordionExample">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
-						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							Zmiana hasła
-						</button>
-					</h2>
-					<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-						<div class="accordion-body">
-							<div class="">
-								<label class="col" for="old_plac_password">Stare hasło:</label>
-								<input class="col" type="password" name="old_plac_password" placeholder="Hasło" id="old_plac_password" required>
-							</div>
-							<div class="">
-								<label for="new_plac_password1">Nowe hasło:</label>
-								<input type="password" name="new_plac_password1" placeholder="powtórz hasło" id="new_plac_password1" required>
-							</div>
-							<div class="">
-								<label for="new_plac_password2">Powtórz nowe hasło:</label>
-								<input type="password" name="new_plac_password2" placeholder="powtórz hasło" id="new_plac_password2" required>
-							</div>
-							<button>zmień</button>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingTwo">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							Zmiana pozostałych danych
-						</button>
-					</h2>
-					<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-						<div class="accordion-body">
-							<div class="">
-								<label for="plac_eMail:">E-mail:</label>
-								<input type="email" name="plac_eMail" placeholder="default@example.pl" id="plac_eMail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-							</div>
-							<div class="">
-								<label for="plac_adres">Adres :</label>
-								<input type="text" name="plac_adres" placeholder="11-111 Błonie ul. Ulu 15" id="plac_adres" pattern="[0-9]{2}+[-]{1}+[0-9]{3}+[a-z0-9._%+-]" size="30" required>
-							</div>
-							<div class="">
-								<label for="plac_telefon">telefon:</label>
-								<input type="tel" name="plac_telefon" value"123456789" id="plac_telefon" pattern="[0-9]{9}" required>
-							</div>
-							<button>zmień</button>
-						</div>
-					</div>
-				</div>
+			<div class="col-sm-4">
+				<a href="accplchpass.html" class="logc">
+					<h3>Zmiana hasła</h3>
+				</a>
+			</div>
+			<div class="col-sm-4">
+			
+			</div>
+			<div class="col-sm-4">
+				<a href="accplchadr.html" class="logc">
+					<h3>Zmiana danych kontaktowych</h3>
+				</a>
 			</div>
 		</div>
 	</div>

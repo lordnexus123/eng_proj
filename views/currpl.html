@@ -49,7 +49,6 @@
 
     <div class="container ">
         
-		<div class="row">SELECT CONCAT_WS(' ',lekarz_dane.specjalizacja, lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz FROM `lekarz_dane` INNER JOIN lekarz_gp ON lekarz_gp.id_lekarz=lekarz_dane.id_lekarz;</div>
 		<div class="row block-center text-center" id="">
 			<div class="pacj_dane">
 				<h1>Dodaj grafik:</h1>
@@ -59,10 +58,9 @@
 				<hr>
 					<div class="">
 						<select class="form-select form-select-sm" aria-label=".form-select-sm example">
-							<option id='dr_wybor' selected>SELECT CONCAT_WS(' ',lekarz_dane.specjalizacja, lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz FROM `lekarz_dane` INNER JOIN lekarz_gp ON lekarz_gp.id_lekarz=lekarz_dane.id_lekarz;</option>
-							<option id='dr_wybor' value="1">One</option>
-							<option id='dr_wybor' value="2">Two</option>
-							<option id='dr_wybor' value="3">Three</option>
+							<option id='dr_wybor' value="1">Dermatolog Iza Gala</option>
+							<option id='dr_wybor' value="2">Neurochirurg Elżbieta Chałwa</option>
+							<option id='dr_wybor' value="3">Ortopeda robert Noga</option>
 						</select>
 					</div>
 				</div>
@@ -73,11 +71,11 @@
 					</div>
 					<div class="">
 						<label for="start_hour">Od godziny:</label>
-						<input type="text" name="start_hour" placeholder="07:30" id="start_hour" pattern="[0-9]{2}+[:]{1}+[0-9]{2}" required>
+						<input type="time" name="start_hour" placeholder="07:30" id="start_hour" pattern="[0-9]{2}+[:]{1}+[0-9]{2}" required>
 					</div>
 					<div class="">
 						<label for="end_hour">Do godziny</label>
-						<input type="text" name="end_hour" placeholder="18:00" id="end_hour" pattern="[0-9]{2}+[:]{1}+[0-9]{2}" required>
+						<input type="time" name="end_hour" placeholder="18:00" id="end_hour" pattern="[0-9]{2}+[:]{1}+[0-9]{2}" required>
 					</div>
 					<div class="">
 						<label for="new_visit">Co ile minut:</label>
@@ -87,38 +85,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="row block-center text-center" id="">
-			<div class="dr_dane">
-				<h1>Zobacz aktualne grafiki:</h1>
-				<hr>
-				<div class="">
-					<select class="form-select form-select-sm" aria-label=".form-select-sm example">
-						<option id='dr_wybor' selected>SELECT CONCAT_WS(' ', lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz FROM `lekarz_dane` INNER JOIN lekarz_gp ON lekarz_gp.id_lekarz=lekarz_dane.id_lekarz WHERE id_placowka=[zalogowana-placowka] ;</option>
-						<option id='dr_wybor' value="1">One</option>
-						<option id='dr_wybor' value="2">Two</option>
-						<option id='dr_wybor' value="3">Three</option>
-					</select>
-				</div>
-				<div class="">
-					<p>SELECT CONCAT_WS(' ', pacjent_dane.imię, pacjent_dane.nazwisko) AS pacjent, terminarz.data, terminarz.godzina FROM `wizyta_dane` INNER JOIN terminarz ON wizyta_dane.id_termin = wizyta_dane.id_termin INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent WHERE terminarz.data >= CURDATE() AND lekarz_dane= [id-wybranego-lekarza];</p>
-				</div>
-				<div class="col block-center text-center">
-					<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
-						<tbody>
-							<tr>
-								<td><p>Imię i nazwisko pacjent</p></td>
-								<td><p>Data</p></td>
-								<td><p>godzina</p></td>
-							</tr>
-							<tr>
-								<td><p>Imię i nazwisko pacjent</p></td>
-								<td><p>Data</p></td>
-								<td><p>godzina</p></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+		<hr>
+		<div class="row block-center text-center">
+			<div class="col-sm-4 align-self-center"> </div>
+			<div class="col-sm-4 align-self-center">
+				<a href="termpl.html" class="logc">
+					<h3>Zobacz aktualne grafiki</h3>
+				</a>
 			</div>
+			<div class="col-sm-4 align-self-center"> </div>
 		</div>
 	</div>
 	

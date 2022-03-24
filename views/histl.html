@@ -50,12 +50,6 @@
             <h1>Historia pacjentów</h1>
         </div>
         <hr>
-	<div class="row">
-		<p>SSELECT pacjent_dane.imię, pacjent_dane.nazwisko, terminarz.data, terminarz.godzina, wizyta_dane.realizacja  FROM `wizyta_dane` 
-INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent
-INNER JOIN terminarz ON wizyta_dane.id_termin = terminarz.id_termin
-WHERE `terminarz`.`id_lekarz` = '1' AND terminarz.id_pacjent IS NOT NULL;</p>
-	</div>
 	<div class="row termin">
 		<div>
 		<h4>Imię i nazwisko pacjenta</h4>
@@ -67,33 +61,48 @@ WHERE `terminarz`.`id_lekarz` = '1' AND terminarz.id_pacjent IS NOT NULL;</p>
 					<td><p>Data</p></td>
 					<td><p>godzina</p></td>
 					<td><p>Odbyła się?</p></td>
-				</tr>
-				<tr>
-					<td><p>specjalizacja_lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>tak/nie</p></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="row termin">
 		<div>
-		<h4>Imię i nazwisko pacjenta</h4>
+		<h4>Jan Nowak</h4>
 		</div>
 		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
 			<tbody>
 				<tr>
-					<td><p>specjalizacja_lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Odbyła się?</p></td>
+					<td><p>Internista</p></td>
+					<td><p>2022-02-12</p></td>
+					<td><p>11:30</p></td>
+					<td><p>tak</p></td>
 				</tr>
 				<tr>
-					<td><p>specjalizacja_lekarza</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>tak/nie</p></td>
+					<td><p>Internista</p></td>
+					<td><p>2022-03-09</p></td>
+					<td><p>12:30</p></td>
+					<td><p>nie</p></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row termin">
+		<div>
+		<h4>Dżesika Ignaczak</h4>
+		</div>
+		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
+			<tbody>
+				<tr>
+					<td><p>Internista</p></td>
+					<td><p>2022-02-12</p></td>
+					<td><p>11:40</p></td>
+					<td><p>nie</p></td>
+				</tr>
+				<tr>
+					<td><p>Internista</p></td>
+					<td><p>2022-02-13</p></td>
+					<td><p>12:30</p></td>
+					<td><p>nie</p></td>
 				</tr>
 			</tbody>
 		</table>

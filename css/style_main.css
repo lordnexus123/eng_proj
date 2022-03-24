@@ -81,11 +81,64 @@ row: active
 	height: 5vh;
 }
 
-
-#log2, #log3, #reg2
+.logc
 {
-	display: none;
+	display: block;
+	color: #fff;
+	background-color: var(--main-color);
+	text-decoration: none;
+	
 }
+.logc:link {
+  text-decoration: none;
+}
+
+.logc:visited {
+  text-decoration: none;
+}
+
+.logc:hover {
+  background-color: var(--main-dark);
+}
+
+.logc:active {
+	text-decoration: none;
+}
+.logc:checked
+{
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--main-color);
+}
+.logi
+{
+	display: block;
+	color: black;
+	background-color: var(--bg-color);
+}
+.logi:link {
+  text-decoration: none;
+}
+
+.logi:visited {
+  text-decoration: none;
+}
+
+.logi:hover {
+  background-color: var(--main-dark);
+}
+
+.logi:active {
+	text-decoration: none;
+}
+.logi:checked
+{
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--main-color);
+}
+
+
 
 
 

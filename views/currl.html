@@ -50,35 +50,34 @@
             <h1>Obecnie zaplanowane</h1>
         </div>
         <hr>
-	<div class="row">
-		<p>SELECT terminarz.data, terminarz.godzina, pacjent_dane.imię, pacjent_dane.nazwisko, pacjent_dane.PESEL, wizyta_dane.link_tele FROM `wizyta_dane`
-INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent
-INNER JOIN terminarz ON wizyta_dane.id_termin = terminarz.id_termin
-WHERE `terminarz`.`id_lekarz` = '1' AND terminarz.id_pacjent IS NOT NULL;</p>
-	</div>
 	<div class="row termin">
 		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
 			<tbody>
 				<tr>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Imię pacjenta</p></td>
-					<td><p>Nazwisko pacjenta</p></td>
-					<td><p>PESEL</p></td>
+					<td><p>2022-04-17</p></td>
+					<td><p>09:20</p></td>
+					<td><p>Jan</p></td>
+					<td><p>Nowak</p></td>
+					<td><p>72030401122</p></td>
+					<td><a href="room.html"><p>link</p></a></td>
 					<td><button>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-</svg>
+						<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+						</svg>
 					</button></td>
-					
 				</tr>
 				<tr>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Imię pacjenta</p></td>
-					<td><p>Nazwisko pacjenta</p></td>
-					<td><p>PESEL</p></td>
-					<td><p>UPDATE `wizyta_dane` SET `realizacja`='1' WHERE id_termin = "[ten termin]"; </p></td>
+					<td><p>2022-04-17</p></td>
+					<td><p>09:30</p></td>
+					<td><p>Grzegorz</p></td>
+					<td><p>Ponurak</p></td>
+					<td><p>52121721937</p></td>
+					<td><a href="room.html"><p>link</p></a></td>
+					<td><button>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+						<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+						</svg>
+					</button></td>
 				</tr>
 			</tbody>
 		</table>

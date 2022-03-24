@@ -55,9 +55,6 @@
             <h1>Odbyte konsultacje</h1>
         </div>
         <hr>
-	<div class="row">
-		<p>SELECT CONCAT_WS(' ',lekarz_dane.imie, lekarz_dane.nazwisko) AS lekarz, lekarz_dane.specjalizacja, CONCAT_WS(' ', pacjent_dane.imię, pacjent_dane.nazwisko) AS pacjent, terminarz.data, terminarz.godzina,wizyta_dane.realizacja FROM `wizyta_dane` INNER JOIN terminarz ON wizyta_dane.id_termin = wizyta_dane.id_termin INNER JOIN lekarz_dane ON lekarz_dane.id_lekarz = terminarz.id_lekarz INNER JOIN pacjent_dane ON wizyta_dane.id_pacjent = pacjent_dane.id_pacjent WHERE terminarz.id_pacjent IS NOT NULL;</p>
-	</div>
 	<div class="row termin">
 		<div>
 		<h4>Specjalizacje lekarzy</h4>
@@ -70,34 +67,60 @@
 					<td><p>Data</p></td>
 					<td><p>godzina</p></td>
 					<td><p>Czy odbyła się?</p></td>
-				</tr>
-				<tr>
-					<td><p>Imię i nazwisko pacjent</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Tak/ Nie</p></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="row termin">
 		<div>
-		<h4>Specjalizacje lekarzy</h4>
-		<h5>Imię i nazwisko lekarza</</h5>
+			<h4>Chirurg</h4>
+			<hr>
+			<h5>Zygmunt Dureń</</h5>
 		</div>
 		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
 			<tbody>
 				<tr>
-					<td><p>Imię i nazwisko pacjent</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Czy odbyła się?</p></td>
+					<td><p>Janusz Kowalski</p></td>
+					<td><p>2021-09-11</p></td>
+					<td><p>19:10</p></td>
+					<td><p>Tak</p></td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+			<h5>Eugeniusz Chwytak</</h5>
+		</div>
+		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
+			<tbody>
+				<tr>
+					<td><p>Jerzy Ogórek</p></td>
+					<td><p>2022-01-22</p></td>
+					<td><p>09:30</p></td>
+					<td><p>Tak</p></td>
 				</tr>
 				<tr>
-					<td><p>Imię i nazwisko pacjent</p></td>
-					<td><p>Data</p></td>
-					<td><p>godzina</p></td>
-					<td><p>Tak/ Nie</p></td>
+					<td><p>Oskar Sterczak</p></td>
+					<td><p>2022-01-21</p></td>
+					<td><p>10:30</p></td>
+					<td><p>Tak</p></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<hr>
+	<div class="row termin">
+		<div>
+			<h4>Ginekolog</h4>
+			<hr>
+			<h5>Agnieszka Rak</</h5>
+		</div>
+		<table style="border-collapse: collapse;" border = "1" cellpadding = "1">
+			<tbody>
+				<tr>
+					<td><p>Renata Wróbel</p></td>
+					<td><p>2020-04-18</p></td>
+					<td><p>15:15</p></td>
+					<td><p>Tak</p></td>
 				</tr>
 			</tbody>
 		</table>
